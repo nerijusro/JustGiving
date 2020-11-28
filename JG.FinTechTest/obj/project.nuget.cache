@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SzljXX/SG+oKhQ/CW/nbIBpiVE0Pvusdn14Bqh+ckfFvqTu8zYy8t0R+XrutCVoFhG7rYD/qqCeqmmJBT8RFpg==",
+  "dgSpecHash": "+imobtP7iQ3nvakCZRTmZdgb2my82KYkd27p2wcaLZcUdJeiCwsh2rDvlNtmFsKmFp2lKGEqrBReUO4AfBQzMQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Nerijus Rozga\\source\\repos\\JustGiving\\JG.FinTechTest\\JG.FinTechTest.csproj",
+  "projectFilePath": "C:\\Users\\Nerijus.Rozga\\Desktop\\New folder\\JustGiving\\JG.FinTechTest\\JG.FinTechTest.csproj",
   "expectedPackageFiles": [
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnet.webapi.client\\5.2.6\\microsoft.aspnet.webapi.client.5.2.6.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnetcore\\2.1.1\\microsoft.aspnetcore.2.1.1.nupkg.sha512",

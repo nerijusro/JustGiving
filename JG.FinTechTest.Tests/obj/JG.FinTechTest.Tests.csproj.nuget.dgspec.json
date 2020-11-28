@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nerijus Rozga\\source\\repos\\JustGiving\\JG.FinTechTest.Tests\\JG.FinTechTest.Tests.csproj": {}
+    "C:\\Users\\Nerijus.Rozga\\Desktop\\New folder\\JustGiving\\JG.FinTechTest.Tests\\JG.FinTechTest.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nerijus Rozga\\source\\repos\\JustGiving\\JG.FinTechTest.Tests\\JG.FinTechTest.Tests.csproj": {
+    "C:\\Users\\Nerijus.Rozga\\Desktop\\New folder\\JustGiving\\JG.FinTechTest.Tests\\JG.FinTechTest.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nerijus Rozga\\source\\repos\\JustGiving\\JG.FinTechTest.Tests\\JG.FinTechTest.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\Nerijus.Rozga\\Desktop\\New folder\\JustGiving\\JG.FinTechTest.Tests\\JG.FinTechTest.Tests.csproj",
         "projectName": "JG.FinTechTest.Tests",
-        "projectPath": "C:\\Users\\Nerijus Rozga\\source\\repos\\JustGiving\\JG.FinTechTest.Tests\\JG.FinTechTest.Tests.csproj",
-        "packagesPath": "C:\\Users\\Nerijus Rozga\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nerijus Rozga\\source\\repos\\JustGiving\\JG.FinTechTest.Tests\\obj\\",
+        "projectPath": "C:\\Users\\Nerijus.Rozga\\Desktop\\New folder\\JustGiving\\JG.FinTechTest.Tests\\JG.FinTechTest.Tests.csproj",
+        "packagesPath": "C:\\Users\\Nerijus.Rozga\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Nerijus.Rozga\\Desktop\\New folder\\JustGiving\\JG.FinTechTest.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Nerijus Rozga\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Nerijus.Rozga\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -25,13 +25,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://nuget.geniussports.net/NugetWebFeed/nuget": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp2.1": {
+            "targetAlias": "netcoreapp2.1",
             "projectReferences": {
-              "C:\\Users\\Nerijus Rozga\\source\\repos\\JustGiving\\JG.FinTechTest\\JG.FinTechTest.csproj": {
-                "projectPath": "C:\\Users\\Nerijus Rozga\\source\\repos\\JustGiving\\JG.FinTechTest\\JG.FinTechTest.csproj"
+              "C:\\Users\\Nerijus.Rozga\\Desktop\\New folder\\JustGiving\\JG.FinTechTest\\JG.FinTechTest.csproj": {
+                "projectPath": "C:\\Users\\Nerijus.Rozga\\Desktop\\New folder\\JustGiving\\JG.FinTechTest\\JG.FinTechTest.csproj"
               }
             }
           }
@@ -44,6 +46,7 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
+          "targetAlias": "netcoreapp2.1",
           "dependencies": {
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
@@ -78,24 +81,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Nerijus Rozga\\source\\repos\\JustGiving\\JG.FinTechTest\\JG.FinTechTest.csproj": {
+    "C:\\Users\\Nerijus.Rozga\\Desktop\\New folder\\JustGiving\\JG.FinTechTest\\JG.FinTechTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nerijus Rozga\\source\\repos\\JustGiving\\JG.FinTechTest\\JG.FinTechTest.csproj",
+        "projectUniqueName": "C:\\Users\\Nerijus.Rozga\\Desktop\\New folder\\JustGiving\\JG.FinTechTest\\JG.FinTechTest.csproj",
         "projectName": "JG.FinTechTest",
-        "projectPath": "C:\\Users\\Nerijus Rozga\\source\\repos\\JustGiving\\JG.FinTechTest\\JG.FinTechTest.csproj",
-        "packagesPath": "C:\\Users\\Nerijus Rozga\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nerijus Rozga\\source\\repos\\JustGiving\\JG.FinTechTest\\obj\\",
+        "projectPath": "C:\\Users\\Nerijus.Rozga\\Desktop\\New folder\\JustGiving\\JG.FinTechTest\\JG.FinTechTest.csproj",
+        "packagesPath": "C:\\Users\\Nerijus.Rozga\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Nerijus.Rozga\\Desktop\\New folder\\JustGiving\\JG.FinTechTest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Nerijus Rozga\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Nerijus.Rozga\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -103,10 +106,12 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://nuget.geniussports.net/NugetWebFeed/nuget": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp2.1": {
+            "targetAlias": "netcoreapp2.1",
             "projectReferences": {}
           }
         },
@@ -118,6 +123,7 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
+          "targetAlias": "netcoreapp2.1",
           "dependencies": {
             "Microsoft.AspNetCore.App": {
               "suppressParent": "All",
@@ -147,7 +153,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

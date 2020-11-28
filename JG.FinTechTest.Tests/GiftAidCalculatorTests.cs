@@ -25,6 +25,7 @@ namespace Tests
             Assert.AreEqual(taxRatePercentage, giftAidCalculator.TaxRatePercentage);
         }
 
+        [Test]
         public void ShouldCalculateGiftAid()
         {
             var taxRatePercentage = 20;
