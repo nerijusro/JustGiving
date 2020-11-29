@@ -19,29 +19,29 @@ namespace JG.FinTechTest.Tests.ControllerTests
             _giftAidCalculator.Setup(gac => gac.CalculateGiftAid(800)).Returns(200);
         }
 
-        [Test]
-        public void ShouldSetCorrectTaxRatePercentage()
-        {
-            var getGiftAidAmountRequest = new GetGiftAidAmountRequest
-            {
-                Amount = 800
-            };
+        //[Test]
+        //public void ShouldSetCorrectTaxRatePercentage()
+        //{
+        //    var getGiftAidAmountRequest = new GetGiftAidAmountRequest
+        //    {
+        //        Amount = 800
+        //    };
 
-            var getGiftAidAmountExpectedResponse = new GetGiftAidAmountResponse
-            {
-                DonationAmount = 800,
-                GiftAidAmount = 200
-            };
+        //    var getGiftAidAmountExpectedResponse = new GetGiftAidAmountResponse
+        //    {
+        //        DonationAmount = 800,
+        //        GiftAidAmount = 200
+        //    };
 
-            _giftAidController = new GiftAidController(_giftAidCalculator.Object);
-            var actionResult = _giftAidController.GetGiftAidAmount(getGiftAidAmountRequest);
+        //    _giftAidController = new GiftAidController(_giftAidCalculator.Object);
+        //    var actionResult = _giftAidController.GetGiftAidAmount(getGiftAidAmountRequest);
 
-            var okObjectResult = actionResult as OkObjectResult;
-            var response = okObjectResult.Value as GetGiftAidAmountResponse;
+        //    var okObjectResult = actionResult as OkObjectResult;
+        //    var response = okObjectResult.Value as GetGiftAidAmountResponse;
 
-            Assert.AreEqual(getGiftAidAmountExpectedResponse.DonationAmount, response.DonationAmount);
-            Assert.AreEqual(getGiftAidAmountExpectedResponse.GiftAidAmount, response.GiftAidAmount);
-        }
+        //    Assert.AreEqual(getGiftAidAmountExpectedResponse.DonationAmount, response.DonationAmount);
+        //    Assert.AreEqual(getGiftAidAmountExpectedResponse.GiftAidAmount, response.GiftAidAmount);
+        //}
 
         //Ask Dan about .net core upgrade, since TestServer is not compatible with 2.1
         //[Test]
