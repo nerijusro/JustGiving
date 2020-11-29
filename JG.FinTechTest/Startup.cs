@@ -23,6 +23,7 @@ namespace JG.FinTechTest
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddScoped<IGiftAidCalculator, GiftAidCalculator>();
             services.Configure<AppSettings.AppSettings>(Configuration.GetSection("AppSettings"));
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -38,7 +39,15 @@ namespace JG.FinTechTest
             }
 
             app.UseHttpsRedirection();
-            app.UseMvc();
+            app.UseRouting();
+
+            app.UseAuthorization();
+            app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyMethod());
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
         }
     }
 }

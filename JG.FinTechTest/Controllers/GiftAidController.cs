@@ -6,6 +6,7 @@ using JG.FinTechTest.Domain.Validators;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace JG.FinTechTest.Controllers
 {
@@ -28,7 +29,7 @@ namespace JG.FinTechTest.Controllers
             var appSettingsValidationResult = AppSettingsValidator.ValidateAppSettings(_appSettings);
             if(appSettingsValidationResult.Count > 0)
             {
-                return StatusCode(500, appSettingsValidationResult);
+                return StatusCode(500, new ValidationResult("Internal Server Error: Definition of one or more configuration settings of the application are invalid."));
             }
 
             var requestValidationResult = AmountValidator.ValidateAmount(_appSettings, request.Amount);
