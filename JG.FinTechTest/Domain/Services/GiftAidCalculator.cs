@@ -1,19 +1,23 @@
 ﻿using JG.FinTechTest.Domain.Interfaces;
+using Microsoft.Extensions.Options;
+using System;
 
 namespace JG.FinTechTest.Domain.Services
 {
     public class GiftAidCalculator : IGiftAidCalculator
     {
+        private AppSettings.AppSettings _appSettings;
         public decimal TaxRatePercentage { get; private set; }
 
-        public GiftAidCalculator(string taxRatePercentage)
+        public GiftAidCalculator(IOptionsMonitor<AppSettings.AppSettings> settings)
         {
-            TaxRatePercentage = int.Parse(taxRatePercentage);
+            _appSettings = settings.CurrentValue;
+            TaxRatePercentage = decimal.Parse(_appSettings.TaxRatePercentage);
         }
 
-        public decimal CalculateGiftAid(int donationAmount)
+        public decimal CalculateGiftAid(decimal donationAmount)
         {
-            return donationAmount * (TaxRatePercentage / (100m - TaxRatePercentage));
+            return Math.Round(donationAmount * (TaxRatePercentage / (100m - TaxRatePercentage)), 2);
         }
     }
 }

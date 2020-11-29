@@ -2,6 +2,7 @@
 {
     public interface IGiftAidCalculator
     {
-        decimal CalculateGiftAid(int donationAmount);
+        decimal TaxRatePercentage { get; }
+        decimal CalculateGiftAid(decimal donationAmount);
     }
 }
