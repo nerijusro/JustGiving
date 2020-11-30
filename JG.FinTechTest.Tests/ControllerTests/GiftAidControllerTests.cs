@@ -1,109 +1,103 @@
-﻿//using JG.FinTechTest.Controllers;
-//using JG.FinTechTest.Domain.Interfaces;
-//using JG.FinTechTest.Domain.Requests;
-//using JG.FinTechTest.Domain.Responses;
-//using Microsoft.AspNetCore.Hosting;
-//using Microsoft.AspNetCore.Mvc;
-//using Microsoft.AspNetCore.TestHost;
-//using Microsoft.Extensions.Options;
-//using Moq;
-//using Newtonsoft.Json;
-//using NUnit.Framework;
-//using System;
-//using System.ComponentModel.DataAnnotations;
-//using System.Net.Http;
-//using System.Security.Policy;
-//using System.Text;
-//using System.Threading.Tasks;
+﻿using JG.FinTechTest.Controllers;
+using JG.FinTechTest.Domain.Interfaces;
+using JG.FinTechTest.Domain.Requests;
+using JG.FinTechTest.Domain.Responses;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
+using Moq;
+using NUnit.Framework;
 
-//namespace JG.FinTechTest.Tests.ControllerTests
-//{
-//    public class GiftAidControllerTests
-//    {
-//        private Mock<IGiftAidCalculator> _giftAidCalculator;
-//        private Mock<IOptionsMonitor<AppSettings.AppSettings>> _optionsMonitorMock;
+using System.Threading.Tasks;
 
-//        public GiftAidControllerTests()
-//        {
-//            _optionsMonitorMock = new Mock<IOptionsMonitor<AppSettings.AppSettings>>();
+namespace JG.FinTechTest.Tests.ControllerTests
+{
+    public class GiftAidControllerTests
+    {
+        private Mock<IGiftAidCalculator> _giftAidCalculator;
+        private Mock<IOptionsMonitor<AppSettings.AppSettings>> _optionsMonitorMock;
 
-//            _giftAidCalculator = new Mock<IGiftAidCalculator>();
-//            _giftAidCalculator.Setup(gac => gac.CalculateGiftAid(800)).Returns(200);
-//        }
+        public GiftAidControllerTests()
+        {
+            _optionsMonitorMock = new Mock<IOptionsMonitor<AppSettings.AppSettings>>();
 
-//        [Test]
-//        public async Task ShouldReturnBadRequestResponseWhenConfigurationIsNotValid()
-//        {
-//            var getGiftAidAmountRequest = new GetGiftAidAmountRequest
-//            {
-//                Amount = 10
-//            };
+            _giftAidCalculator = new Mock<IGiftAidCalculator>();
+            _giftAidCalculator.Setup(gac => gac.CalculateGiftAid(800)).Returns(200);
+        }
 
-//            _optionsMonitorMock.Setup(o => o.CurrentValue).Returns(new AppSettings.AppSettings());
+        [Test]
+        public async Task ShouldReturnInternalServerErrorWhenConfigurationIsNotValid()
+        {
+            var getGiftAidAmountRequest = new GetGiftAidAmountRequest
+            {
+                Amount = 10
+            };
 
-//            var expectedResponse = new ObjectResult("Internal Server Error: Definition of one or more configuration settings of the application are invalid.");
-//            expectedResponse.StatusCode = 500;
+            _optionsMonitorMock.Setup(o => o.CurrentValue).Returns(new AppSettings.AppSettings());
 
-//            var controller = new GiftAidController(_optionsMonitorMock.Object, _giftAidCalculator.Object);
-//            var response = controller.GetGiftAidAmount(getGiftAidAmountRequest);
-//            var responseContext = response as ObjectResult;
+            var expectedResponse = new ObjectResult("Internal Server Error: Definition of one or more configuration settings of the application are invalid.");
+            expectedResponse.StatusCode = 500;
 
-//            Assert.AreEqual(expectedResponse.StatusCode, responseContext.StatusCode);
-//            Assert.AreEqual(expectedResponse.Value.ToString(), responseContext.Value.ToString());
-//        }
+            var controller = new GiftAidController(_optionsMonitorMock.Object, _giftAidCalculator.Object);
+            var response = controller.GetGiftAidAmount(getGiftAidAmountRequest);
+            var responseContext = response as ObjectResult;
 
-//        //[Test]
-//        //public void ShouldSetCorrectTaxRatePercentage()
-//        //{
-//        //    var getGiftAidAmountRequest = new GetGiftAidAmountRequest
-//        //    {
-//        //        Amount = 800
-//        //    };
+            Assert.AreEqual(expectedResponse.StatusCode, responseContext.StatusCode);
+            Assert.AreEqual(expectedResponse.Value.ToString(), responseContext.Value.ToString());
+        }
 
-//        //    var getGiftAidAmountExpectedResponse = new GetGiftAidAmountResponse
-//        //    {
-//        //        DonationAmount = 800,
-//        //        GiftAidAmount = 200
-//        //    };
+        [Test]
+        public async Task ShouldReturnBadRequestWhenAmountIsNotValid()
+        {
+            var getGiftAidAmountRequest = new GetGiftAidAmountRequest
+            {
+                Amount = 10
+            };
 
-//        //    _giftAidController = new GiftAidController(_giftAidCalculator.Object);
-//        //    var actionResult = _giftAidController.GetGiftAidAmount(getGiftAidAmountRequest);
+            _optionsMonitorMock.Setup(o => o.CurrentValue).Returns(new AppSettings.AppSettings
+            {
+                TaxRatePercentage = "20",
+                MinimumDonationAmount = "20",
+                MaximumDonationAmount = "50"
+            });
 
-//        //    var okObjectResult = actionResult as OkObjectResult;
-//        //    var response = okObjectResult.Value as GetGiftAidAmountResponse;
+            var expectedResponse = new ObjectResult("Donation amount can not be smaller than 20 and can not be larger than 50");
+            expectedResponse.StatusCode = 400;
 
-//        //    Assert.AreEqual(getGiftAidAmountExpectedResponse.DonationAmount, response.DonationAmount);
-//        //    Assert.AreEqual(getGiftAidAmountExpectedResponse.GiftAidAmount, response.GiftAidAmount);
-//        //}
+            var controller = new GiftAidController(_optionsMonitorMock.Object, _giftAidCalculator.Object);
+            var response = controller.GetGiftAidAmount(getGiftAidAmountRequest);
+            var responseContext = response as ObjectResult;
 
-//        //Ask Dan about .net core upgrade, since TestServer is not compatible with 2.1
-//        //[Test]
-//        //public void ShouldReturnBadRequestResponse()
-//        //{
-//        //    var getGiftAidAmountRequest = new GetGiftAidAmountRequest();
+            Assert.AreEqual(expectedResponse.StatusCode, responseContext.StatusCode);
+            Assert.AreEqual(expectedResponse.Value.ToString(), responseContext.Value.ToString());
+        }
 
-//        //    _giftAidController = new GiftAidController(_giftAidCalculator.Object);
-//        //    var actionResult = _giftAidController.GetGiftAidAmount(getGiftAidAmountRequest);
+        [Test]
+        public async Task ShouldReturnValidCalculateGiftAidResponse()
+        {
+            var getGiftAidAmountRequest = new GetGiftAidAmountRequest
+            {
+                Amount = 30
+            };
 
-//        //    var okObjectResult = actionResult as ObjectResult;
+            var expectedResponse = new GetGiftAidAmountResponse
+            {
+                DonationAmount = 30,
+                GiftAidAmount = 7.5m
+            };
 
-//        //    Assert.IsNull(okObjectResult);
+            _optionsMonitorMock.Setup(o => o.CurrentValue).Returns(new AppSettings.AppSettings
+            {
+                TaxRatePercentage = "20",
+                MinimumDonationAmount = "20",
+                MaximumDonationAmount = "50"
+            });
 
-//        //    //arrange
-//        //    var b = new WebHostBuilder()
-//        //        .UseStartup<Startup>()
-//        //        .UseEnvironment("test");
+            var controller = new GiftAidController(_optionsMonitorMock.Object, _giftAidCalculator.Object);
+            var response = controller.GetGiftAidAmount(getGiftAidAmountRequest);
+            var responseContext = response as ObjectResult;
 
-//        //    var server = new TestServer(b) { BaseAddress = new Uri(Url) };
-//        //    var client = server.CreateClient();
-//        //    var json = JsonConvert.SerializeObject(yourInvalidModel);
-//        //    var content = new StringContent(json, Encoding.UTF8, "application/json");
-
-//        //    //act
-//        //    var result = await client.PostAsync("api/yourController", content);
-
-//        //    assert
-//        //    Assert.AreEqual(400, (int)result.StatusCode);
-//        //}
-//    }
-//}
+            Assert.AreEqual(200, responseContext.StatusCode);
+            Assert.AreEqual(expectedResponse.ToString(), responseContext.Value.ToString());
+        }
+    }
+}
