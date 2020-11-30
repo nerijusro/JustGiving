@@ -128,3 +128,5 @@ C:\Users\Nerijus.Rozga\Desktop\New folder\JustGiving\JG.FinTechTest.Tests\obj\De
 C:\Users\Nerijus.Rozga\Desktop\New folder\JustGiving\JG.FinTechTest.Tests\obj\Debug\netcoreapp3.1\JG.FinTechTest.Tests.dll
 C:\Users\Nerijus.Rozga\Desktop\New folder\JustGiving\JG.FinTechTest.Tests\obj\Debug\netcoreapp3.1\JG.FinTechTest.Tests.pdb
 C:\Users\Nerijus.Rozga\Desktop\New folder\JustGiving\JG.FinTechTest.Tests\obj\Debug\netcoreapp3.1\JG.FinTechTest.Tests.genruntimeconfig.cache
+C:\Users\Nerijus.Rozga\Desktop\New folder\JustGiving\JG.FinTechTest.Tests\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.TestHost.dll
+C:\Users\Nerijus.Rozga\Desktop\New folder\JustGiving\JG.FinTechTest.Tests\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll

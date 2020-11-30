@@ -60,6 +60,10 @@
               "target": "Package",
               "version": "[2.2.5, )"
             },
+            "Microsoft.AspNetCore.TestHost": {
+              "target": "Package",
+              "version": "[3.1.10, )"
+            },
             "Microsoft.Extensions.Options": {
               "target": "Package",
               "version": "[5.0.0, )"
