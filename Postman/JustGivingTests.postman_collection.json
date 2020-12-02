@@ -1,0 +1,276 @@
+{
+	"info": {
+		"_postman_id": "b9aee928-fa00-4512-9158-48b10eca2f62",
+		"name": "JustGivingTests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetGiftAidAmountTests",
+			"item": [
+				{
+					"name": "GetGiftAidAmount",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44320/api/giftaid?amount=4",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44320",
+							"path": [
+								"api",
+								"giftaid"
+							],
+							"query": [
+								{
+									"key": "amount",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "CreateDonationDeclarationTests",
+			"item": [
+				{
+					"name": "Success",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9a0da95d-2dfe-49ba-8f5d-330db24a449d",
+								"exec": [
+									"const json = pm.response.json();\r",
+									"pm.globals.set(\"declarationId\", json.declarationId);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Name\": \"Nerijus\",\r\n    \"postCode\": \"NerijussPostCode\",\r\n    \"DonationAmount\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44320/api/giftaid/declarations",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44320",
+							"path": [
+								"api",
+								"giftaid",
+								"declarations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "InvalidRequest",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "db7ada46-0fdc-422b-af77-1340f1c7dc97",
+								"exec": [
+									"pm.test(\"Should return bad request status code\", function () {\r",
+									"     pm.response.to.have.status(400);\r",
+									"     pm.response.to.be.json;\r",
+									"     const json = pm.response.json();\r",
+									"     pm.expect(json.title).to.equal(\"One or more validation errors occurred.\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Name\": \"Nerijus\",\r\n    \"DonationAmount\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44320/api/giftaid/declarations",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44320",
+							"path": [
+								"api",
+								"giftaid",
+								"declarations"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "GetDonationDeclarationTests",
+			"item": [
+				{
+					"name": "Success",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "94f079e1-57be-4269-a58e-4ff56e4b67b6",
+								"exec": [
+									"pm.test(\"Response must be valid and have a body\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.json;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44320/api/giftaid/declarations?Id={{declarationId}}",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44320",
+							"path": [
+								"api",
+								"giftaid",
+								"declarations"
+							],
+							"query": [
+								{
+									"key": "Id",
+									"value": "{{declarationId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "IdTooShort",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c6620d4a-fec5-4351-bead-a771054d9ad1",
+								"exec": [
+									"pm.test(\"Should return bad request status code\", function () {\r",
+									"     pm.response.to.have.status(400);\r",
+									"     pm.response.to.be.json;\r",
+									"     const json = pm.response.json();\r",
+									"     const errorId = json.errors.Id[0];\r",
+									"     pm.expect(errorId).to.equal(\"Declaration id is defined by 24 character long string\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44320/api/giftaid/declarations?Id=5fc8107f5e2ee",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44320",
+							"path": [
+								"api",
+								"giftaid",
+								"declarations"
+							],
+							"query": [
+								{
+									"key": "Id",
+									"value": "5fc8107f5e2ee"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "IdInvalid",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cf44879a-ec50-4c61-8159-83b27cafc3da",
+								"exec": [
+									"pm.test(\"Should return bad request status code\", function () {\r",
+									"     pm.response.to.have.status(404);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44320/api/giftaid/declarations?Id=5fc8107f5e2ee20750f89623",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44320",
+							"path": [
+								"api",
+								"giftaid",
+								"declarations"
+							],
+							"query": [
+								{
+									"key": "Id",
+									"value": "5fc8107f5e2ee20750f89623"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
