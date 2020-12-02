@@ -2,6 +2,7 @@
 using JG.FinTechTest.Domain.Utils;
 using Microsoft.Extensions.Options;
 using System;
+using JG.FinTechTest.Options;
 
 namespace JG.FinTechTest.Domain.Services
 {
@@ -9,7 +10,7 @@ namespace JG.FinTechTest.Domain.Services
     {
         public decimal TaxRatePercentage { get; private set; }
 
-        public GiftAidCalculator(IOptionsMonitor<AppSettings.AppSettings> settings)
+        public GiftAidCalculator(IOptionsMonitor<AppSettings> settings)
         {
             TaxRatePercentage = AppSettingsUtils.GetTaxRatePercentage(settings);
         }

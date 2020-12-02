@@ -1,12 +1,13 @@
 ﻿using JG.FinTechTest.Domain.Utils;
 using Microsoft.Extensions.Options;
 using System.ComponentModel.DataAnnotations;
+using JG.FinTechTest.Options;
 
 namespace JG.FinTechTest.Domain.Validators
 {
     public class AmountValidator
     {
-        public static ValidationResult ValidateAmount(IOptionsMonitor<AppSettings.AppSettings> settings, decimal amount)
+        public static ValidationResult ValidateAmount(IOptionsMonitor<AppSettings> settings, decimal amount)
         {
             decimal minimumDonationAmount;
             decimal maximumDonationAmount;

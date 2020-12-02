@@ -25,3 +25,9 @@ C:\Users\Nerijus.Rozga\Desktop\New folder\JustGiving\JG.FinTechTest\obj\Debug\ne
 C:\Users\Nerijus.Rozga\Desktop\New folder\JustGiving\JG.FinTechTest\obj\Debug\netcoreapp3.1\JG.FinTechTest.dll
 C:\Users\Nerijus.Rozga\Desktop\New folder\JustGiving\JG.FinTechTest\obj\Debug\netcoreapp3.1\JG.FinTechTest.pdb
 C:\Users\Nerijus.Rozga\Desktop\New folder\JustGiving\JG.FinTechTest\obj\Debug\netcoreapp3.1\JG.FinTechTest.genruntimeconfig.cache
+C:\Users\Nerijus.Rozga\Desktop\New folder\JustGiving\JG.FinTechTest\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\Nerijus.Rozga\Desktop\New folder\JustGiving\JG.FinTechTest\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Nerijus.Rozga\Desktop\New folder\JustGiving\JG.FinTechTest\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Nerijus.Rozga\Desktop\New folder\JustGiving\JG.FinTechTest\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Nerijus.Rozga\Desktop\New folder\JustGiving\JG.FinTechTest\obj\Debug\netcoreapp3.1\JG.FinTechTest.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Nerijus.Rozga\Desktop\New folder\JustGiving\JG.FinTechTest\bin\Debug\netcoreapp3.1\LiteDB.dll

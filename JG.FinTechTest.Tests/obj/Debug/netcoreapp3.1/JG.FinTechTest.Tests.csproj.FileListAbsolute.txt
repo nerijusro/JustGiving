@@ -130,3 +130,8 @@ C:\Users\Nerijus.Rozga\Desktop\New folder\JustGiving\JG.FinTechTest.Tests\obj\De
 C:\Users\Nerijus.Rozga\Desktop\New folder\JustGiving\JG.FinTechTest.Tests\obj\Debug\netcoreapp3.1\JG.FinTechTest.Tests.genruntimeconfig.cache
 C:\Users\Nerijus.Rozga\Desktop\New folder\JustGiving\JG.FinTechTest.Tests\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.TestHost.dll
 C:\Users\Nerijus.Rozga\Desktop\New folder\JustGiving\JG.FinTechTest.Tests\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
+C:\Users\Nerijus.Rozga\Desktop\New folder\JustGiving\JG.FinTechTest.Tests\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\Nerijus.Rozga\Desktop\New folder\JustGiving\JG.FinTechTest.Tests\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Nerijus.Rozga\Desktop\New folder\JustGiving\JG.FinTechTest.Tests\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Nerijus.Rozga\Desktop\New folder\JustGiving\JG.FinTechTest.Tests\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Nerijus.Rozga\Desktop\New folder\JustGiving\JG.FinTechTest.Tests\bin\Debug\netcoreapp3.1\LiteDB.dll

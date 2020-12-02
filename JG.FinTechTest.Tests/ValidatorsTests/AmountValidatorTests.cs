@@ -3,22 +3,23 @@ using Microsoft.Extensions.Options;
 using Moq;
 using NUnit.Framework;
 using System.ComponentModel.DataAnnotations;
+using JG.FinTechTest.Options;
 
 namespace JG.FinTechTest.Tests.ValidatorsTests
 {
     public class AmountValidatorTests
     {
-        private Mock<IOptionsMonitor<AppSettings.AppSettings>> _optionsMonitorMock;
+        private Mock<IOptionsMonitor<AppSettings>> _optionsMonitorMock;
 
         public AmountValidatorTests()
         {
-            _optionsMonitorMock = new Mock<IOptionsMonitor<AppSettings.AppSettings>>();
+            _optionsMonitorMock = new Mock<IOptionsMonitor<AppSettings>>();
         }
 
         [Test]
         public void ShouldValidateAmountWhenDataIsValid()
         {
-            _optionsMonitorMock.Setup(o => o.CurrentValue).Returns(new AppSettings.AppSettings()
+            _optionsMonitorMock.Setup(o => o.CurrentValue).Returns(new AppSettings()
             {
                 MinimumDonationAmount = "2",
                 MaximumDonationAmount = "100000"
@@ -32,7 +33,7 @@ namespace JG.FinTechTest.Tests.ValidatorsTests
         [Test]
         public void ShouldValidateWhenLowerRangeIsZero()
         {
-            _optionsMonitorMock.Setup(o => o.CurrentValue).Returns(new AppSettings.AppSettings()
+            _optionsMonitorMock.Setup(o => o.CurrentValue).Returns(new AppSettings()
             {
                 MaximumDonationAmount = "100000"
             });
@@ -45,7 +46,7 @@ namespace JG.FinTechTest.Tests.ValidatorsTests
         [Test]
         public void ShouldReturnValidationErrorWhenAmountIsOutOfRange()
         {
-            _optionsMonitorMock.Setup(o => o.CurrentValue).Returns(new AppSettings.AppSettings()
+            _optionsMonitorMock.Setup(o => o.CurrentValue).Returns(new AppSettings()
             {
                 MinimumDonationAmount = "3",
                 MaximumDonationAmount = "100000"
@@ -61,7 +62,7 @@ namespace JG.FinTechTest.Tests.ValidatorsTests
         [Test]
         public void ShouldReturnValidationErrorWhenAmountIsOutOfRangeButMaximumAmountIsNotDefined()
         {
-            _optionsMonitorMock.Setup(o => o.CurrentValue).Returns(new AppSettings.AppSettings()
+            _optionsMonitorMock.Setup(o => o.CurrentValue).Returns(new AppSettings()
             {
                 MinimumDonationAmount = "3"
             });

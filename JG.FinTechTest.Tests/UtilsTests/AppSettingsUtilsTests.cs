@@ -1,4 +1,5 @@
 ﻿using JG.FinTechTest.Domain.Utils;
+using JG.FinTechTest.Options;
 using Microsoft.Extensions.Options;
 using Moq;
 using NUnit.Framework;
@@ -7,17 +8,17 @@ namespace JG.FinTechTest.Tests.UtilsTests
 {
     public class AppSettingsUtilsTests
     {
-        private Mock<IOptionsMonitor<AppSettings.AppSettings>> _optionsMonitorMock;
+        private Mock<IOptionsMonitor<AppSettings>> _optionsMonitorMock;
 
         public AppSettingsUtilsTests()
         {
-            _optionsMonitorMock = new Mock<IOptionsMonitor<AppSettings.AppSettings>>();
+            _optionsMonitorMock = new Mock<IOptionsMonitor<AppSettings>>();
         }
 
         [Test]
         public void ShouldGetLowerAndHigherRange()
         {
-            _optionsMonitorMock.Setup(o => o.CurrentValue).Returns(new AppSettings.AppSettings()
+            _optionsMonitorMock.Setup(o => o.CurrentValue).Returns(new AppSettings()
             {
                 MinimumDonationAmount = "2",
                 MaximumDonationAmount = "100000"
@@ -34,7 +35,7 @@ namespace JG.FinTechTest.Tests.UtilsTests
         [Test]
         public void ShouldGetLowerRangeWhenHigherIsNotPresent()
         {
-            _optionsMonitorMock.Setup(o => o.CurrentValue).Returns(new AppSettings.AppSettings()
+            _optionsMonitorMock.Setup(o => o.CurrentValue).Returns(new AppSettings()
             {
                 MinimumDonationAmount = "2",
             });
@@ -50,7 +51,7 @@ namespace JG.FinTechTest.Tests.UtilsTests
         [Test]
         public void ShouldGetHigherRangeWhenLowerIsNotPresent()
         {
-            _optionsMonitorMock.Setup(o => o.CurrentValue).Returns(new AppSettings.AppSettings()
+            _optionsMonitorMock.Setup(o => o.CurrentValue).Returns(new AppSettings()
             {
                 MaximumDonationAmount = "2",
             });
@@ -65,7 +66,7 @@ namespace JG.FinTechTest.Tests.UtilsTests
         [Test]
         public void ShouldSetLowerRangeToZeroWhenItsNotPresentInAppSettings()
         {
-            _optionsMonitorMock.Setup(o => o.CurrentValue).Returns(new AppSettings.AppSettings()
+            _optionsMonitorMock.Setup(o => o.CurrentValue).Returns(new AppSettings()
             {
                 MaximumDonationAmount = "2",
             });
@@ -80,7 +81,7 @@ namespace JG.FinTechTest.Tests.UtilsTests
         [Test]
         public void ShouldGetTaxRatePercentage()
         {
-            _optionsMonitorMock.Setup(o => o.CurrentValue).Returns(new AppSettings.AppSettings()
+            _optionsMonitorMock.Setup(o => o.CurrentValue).Returns(new AppSettings()
             {
                 TaxRatePercentage = "20",
             });
@@ -93,7 +94,7 @@ namespace JG.FinTechTest.Tests.UtilsTests
         [Test]
         public void ShouldGetZeroWhenTaxRatePercentageIsNotPresentInAppSettings()
         {
-            _optionsMonitorMock.Setup(o => o.CurrentValue).Returns(new AppSettings.AppSettings()
+            _optionsMonitorMock.Setup(o => o.CurrentValue).Returns(new AppSettings()
             {
             });
 

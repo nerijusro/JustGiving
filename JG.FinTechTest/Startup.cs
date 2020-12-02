@@ -1,5 +1,7 @@
 ﻿using JG.FinTechTest.Domain.Interfaces;
 using JG.FinTechTest.Domain.Services;
+using JG.FinTechTest.Options;
+using JG.FinTechTest.Resources;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -22,7 +24,10 @@ namespace JG.FinTechTest
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddScoped<IGiftAidCalculator, GiftAidCalculator>();
-            services.Configure<AppSettings.AppSettings>(Configuration.GetSection("AppSettings"));
+            services.AddSingleton<ILiteDbContext, LiteDbContext>();
+            services.AddTransient<IDonationDeclarationService, DonationDeclarationService>();
+            services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
+            services.Configure<LiteDbOptions>(Configuration.GetSection("LiteDbOptions"));
             services.AddControllers();
         }
 

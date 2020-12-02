@@ -4,16 +4,17 @@ using Moq;
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using JG.FinTechTest.Options;
 
 namespace JG.FinTechTest.Tests.ValidatorsTests
 {
     public class AppSettingsValidatorTests
     {
-        private Mock<IOptionsMonitor<AppSettings.AppSettings>> _optionsMonitorMock;
+        private Mock<IOptionsMonitor<AppSettings>> _optionsMonitorMock;
 
         public AppSettingsValidatorTests()
         {
-            _optionsMonitorMock = new Mock<IOptionsMonitor<AppSettings.AppSettings>>();
+            _optionsMonitorMock = new Mock<IOptionsMonitor<AppSettings>>();
         }
 
         [Test]
@@ -53,7 +54,7 @@ namespace JG.FinTechTest.Tests.ValidatorsTests
         [Test]
         public void ShouldValidateTaxRatePercentage()
         {
-            _optionsMonitorMock.Setup(o => o.CurrentValue).Returns(new AppSettings.AppSettings()
+            _optionsMonitorMock.Setup(o => o.CurrentValue).Returns(new AppSettings()
             {
                 TaxRatePercentage = "20"
             });
@@ -66,7 +67,7 @@ namespace JG.FinTechTest.Tests.ValidatorsTests
         [Test]
         public void ShouldValidateUnsuccessfulyWhenTaxRateIsNotPresentInAppSettings()
         {
-            _optionsMonitorMock.Setup(o => o.CurrentValue).Returns(new AppSettings.AppSettings()
+            _optionsMonitorMock.Setup(o => o.CurrentValue).Returns(new AppSettings()
             {
             });
 
@@ -80,7 +81,7 @@ namespace JG.FinTechTest.Tests.ValidatorsTests
         [Test]
         public void ShouldValidateAppSettingsSuccessfuly()
         {
-            _optionsMonitorMock.Setup(o => o.CurrentValue).Returns(new AppSettings.AppSettings()
+            _optionsMonitorMock.Setup(o => o.CurrentValue).Returns(new AppSettings()
             {
                 MinimumDonationAmount = "2",
                 MaximumDonationAmount = "100000",
@@ -97,7 +98,7 @@ namespace JG.FinTechTest.Tests.ValidatorsTests
         [Test]
         public void ValidateAppSettingsShouldReturnTaxRatePercentageValidationError()
         {
-            _optionsMonitorMock.Setup(o => o.CurrentValue).Returns(new AppSettings.AppSettings()
+            _optionsMonitorMock.Setup(o => o.CurrentValue).Returns(new AppSettings()
             {
                 MinimumDonationAmount = "2",
                 MaximumDonationAmount = "100000"
@@ -117,7 +118,7 @@ namespace JG.FinTechTest.Tests.ValidatorsTests
         [Test]
         public void ValidateAppSettingsShouldReturnAmountRangeValidationError()
         {
-            _optionsMonitorMock.Setup(o => o.CurrentValue).Returns(new AppSettings.AppSettings()
+            _optionsMonitorMock.Setup(o => o.CurrentValue).Returns(new AppSettings()
             {
                 TaxRatePercentage = "20",
                 MinimumDonationAmount = "2",
@@ -138,7 +139,7 @@ namespace JG.FinTechTest.Tests.ValidatorsTests
         [Test]
         public void ValidateAppSettingsShouldReturnBothAmountRangeAndTaxRateValidationError()
         {
-            _optionsMonitorMock.Setup(o => o.CurrentValue).Returns(new AppSettings.AppSettings()
+            _optionsMonitorMock.Setup(o => o.CurrentValue).Returns(new AppSettings()
             {
                 MinimumDonationAmount = "2",
                 MaximumDonationAmount = "1"

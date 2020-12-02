@@ -1,4 +1,5 @@
 using JG.FinTechTest.Domain.Services;
+using JG.FinTechTest.Options;
 using Microsoft.Extensions.Options;
 using Moq;
 using NUnit.Framework;
@@ -7,12 +8,12 @@ namespace JG.FinTechTest.Tests.ServiceTests
 {
     public class GiftAidCalculatorTests
     {
-        private Mock<IOptionsMonitor<AppSettings.AppSettings>> _optionsMonitorMock;
+        private Mock<IOptionsMonitor<AppSettings>> _optionsMonitorMock;
 
         public GiftAidCalculatorTests()
         {
-            _optionsMonitorMock = new Mock<IOptionsMonitor<AppSettings.AppSettings>>();
-            _optionsMonitorMock.Setup(o => o.CurrentValue).Returns(new AppSettings.AppSettings() { TaxRatePercentage = "20" });
+            _optionsMonitorMock = new Mock<IOptionsMonitor<AppSettings>>();
+            _optionsMonitorMock.Setup(o => o.CurrentValue).Returns(new AppSettings() { TaxRatePercentage = "20" });
         }
 
         [Test]

@@ -1,4 +1,4 @@
-﻿namespace JG.FinTechTest.AppSettings
+﻿namespace JG.FinTechTest.Options
 {
     public class AppSettings
     {

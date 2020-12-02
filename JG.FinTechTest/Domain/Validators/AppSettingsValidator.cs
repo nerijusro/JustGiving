@@ -1,12 +1,13 @@
 ﻿using Microsoft.Extensions.Options;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using JG.FinTechTest.Options;
 
 namespace JG.FinTechTest.Domain.Utils
 {
     public class AppSettingsValidator
     {
-        public static List<ValidationResult> ValidateAppSettings(IOptionsMonitor<AppSettings.AppSettings> settings)
+        public static List<ValidationResult> ValidateAppSettings(IOptionsMonitor<AppSettings> settings)
         {
             var validationResults = new List<ValidationResult>();
 
@@ -33,7 +34,7 @@ namespace JG.FinTechTest.Domain.Utils
             return new ValidationResult("Configuration of application contains invalid definition of minimum and maximum donation amount.");
         }
 
-        public static ValidationResult ValidateTaxRatePercentage(IOptionsMonitor<AppSettings.AppSettings> settings)
+        public static ValidationResult ValidateTaxRatePercentage(IOptionsMonitor<AppSettings> settings)
         {
             decimal taxRatePercentage;
             var isTaxRatePercentageProvided = decimal.TryParse(settings.CurrentValue.TaxRatePercentage, out taxRatePercentage);

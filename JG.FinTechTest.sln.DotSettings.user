@@ -1,0 +1,18 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=0d303d05_002D4750_002D449f_002D866a_002Dff364f11f876/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="ShouldGetDonationDeclaration" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::F3137C9F-9A42-455D-BEE9-B50207669E56::.NETCoreApp,Version=v3.1::JG.FinTechTest.Tests.ServiceTests.DonationDeclarationServiceTests.ShouldGetDonationDeclaration&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::F3137C9F-9A42-455D-BEE9-B50207669E56::.NETCoreApp,Version=v3.1::JG.FinTechTest.Tests.ControllerTests.GiftAidControllerTests.ShouldReturnBadRequestSinceRequestBodyIsIncomplete&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::F3137C9F-9A42-455D-BEE9-B50207669E56::.NETCoreApp,Version=v3.1::JG.FinTechTest.Tests.ControllerTests.GiftAidControllerTests.CreateDonationShouldReturnInternalServerErrorWhenConfigurationIsNotValid&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::F3137C9F-9A42-455D-BEE9-B50207669E56::.NETCoreApp,Version=v3.1::JG.FinTechTest.Tests.ControllerTests.GiftAidControllerTests.CreateDonationShouldReturnBadRequestWhenAmountIsNotValid&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::F3137C9F-9A42-455D-BEE9-B50207669E56::.NETCoreApp,Version=v3.1::JG.FinTechTest.Tests.ControllerTests.GiftAidControllerTests.ShouldCreateDonationSuccessfully&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::F3137C9F-9A42-455D-BEE9-B50207669E56::.NETCoreApp,Version=v3.1::JG.FinTechTest.Tests.ControllerTests.GiftAidControllerTests.ShouldReturnNotFoundCodeWhenGivenIdIsInvalid&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::F3137C9F-9A42-455D-BEE9-B50207669E56::.NETCoreApp,Version=v3.1::JG.FinTechTest.Tests.ControllerTests.GiftAidControllerTests.GetDeclarationShouldReturnIdLengthValidationError&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::F3137C9F-9A42-455D-BEE9-B50207669E56::.NETCoreApp,Version=v3.1::JG.FinTechTest.Tests.ControllerTests.GiftAidControllerTests.GetDeclarationShouldReturnDeclarationData&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=3b7d4fbe_002D50f6_002D4a70_002D84c9_002D0ae0d56c92f6/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="ShouldGetDonationDeclaration #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::F3137C9F-9A42-455D-BEE9-B50207669E56::.NETCoreApp,Version=v3.1::JG.FinTechTest.Tests.ServiceTests.DonationDeclarationServiceTests.ShouldGetDonationDeclaration&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
