@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "U2SLi+mCKdCY2OEKqtgjTM4JkTZNEwc2ZaJ0yDEGDL3oK87QgRkUgpagMaQxVhQ+dudtXgNZCL2rrFk0Ige0eQ==",
+  "dgSpecHash": "4XjD7qjgk6sho0lNvEqXFt2zzN5bTUN6LKo9SK97N6hL+vU09SJeKExvcl25MXPWYTG82JCba4PKBFSctcUuag==",
   "success": true,
   "projectFilePath": "C:\\Users\\Nerijus.Rozga\\Desktop\\New folder\\JustGiving\\JG.FinTechTest\\JG.FinTechTest.csproj",
   "expectedPackageFiles": [
@@ -15,6 +15,7 @@
     "C:\\Users\\Nerijus.Rozga\\.nuget\\packages\\microsoft.web.infrastructure\\1.0.0\\microsoft.web.infrastructure.1.0.0.nupkg.sha512",
     "C:\\Users\\Nerijus.Rozga\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\Nerijus.Rozga\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\Nerijus.Rozga\\.nuget\\packages\\swashbuckle.aspnetcore.annotations\\5.6.3\\swashbuckle.aspnetcore.annotations.5.6.3.nupkg.sha512",
     "C:\\Users\\Nerijus.Rozga\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
     "C:\\Users\\Nerijus.Rozga\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
     "C:\\Users\\Nerijus.Rozga\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512",

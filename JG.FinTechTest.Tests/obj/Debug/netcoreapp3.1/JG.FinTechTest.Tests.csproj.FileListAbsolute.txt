@@ -135,3 +135,4 @@ C:\Users\Nerijus.Rozga\Desktop\New folder\JustGiving\JG.FinTechTest.Tests\bin\De
 C:\Users\Nerijus.Rozga\Desktop\New folder\JustGiving\JG.FinTechTest.Tests\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Nerijus.Rozga\Desktop\New folder\JustGiving\JG.FinTechTest.Tests\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\Nerijus.Rozga\Desktop\New folder\JustGiving\JG.FinTechTest.Tests\bin\Debug\netcoreapp3.1\LiteDB.dll
+C:\Users\Nerijus.Rozga\Desktop\New folder\JustGiving\JG.FinTechTest.Tests\bin\Debug\netcoreapp3.1\JG.FinTechTest.xml

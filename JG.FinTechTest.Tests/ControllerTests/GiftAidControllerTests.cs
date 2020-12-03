@@ -32,7 +32,7 @@ namespace JG.FinTechTest.Tests.ControllerTests
         [Test]
         public async Task ShouldReturnInternalServerErrorWhenConfigurationIsNotValid()
         {
-            var getGiftAidAmountRequest = new GetGiftAidAmountRequest
+            var getGiftAidAmountRequest = new GiftAidRequest
             {
                 Amount = 10
             };
@@ -53,7 +53,7 @@ namespace JG.FinTechTest.Tests.ControllerTests
         [Test]
         public async Task ShouldReturnBadRequestWhenAmountIsNotValid()
         {
-            var getGiftAidAmountRequest = new GetGiftAidAmountRequest
+            var getGiftAidAmountRequest = new GiftAidRequest
             {
                 Amount = 10
             };
@@ -79,12 +79,12 @@ namespace JG.FinTechTest.Tests.ControllerTests
         [Test]
         public async Task ShouldReturnValidCalculateGiftAidResponse()
         {
-            var getGiftAidAmountRequest = new GetGiftAidAmountRequest
+            var getGiftAidAmountRequest = new GiftAidRequest
             {
                 Amount = 30
             };
 
-            var expectedResponse = new GetGiftAidAmountResponse
+            var expectedResponse = new GiftAidResponse
             {
                 DonationAmount = 30,
                 GiftAidAmount = 7.5m
@@ -108,7 +108,7 @@ namespace JG.FinTechTest.Tests.ControllerTests
         [Test]
         public async Task CreateDonationShouldReturnBadRequestSinceRequestBodyIsIncomplete()
         {
-            var testCreateDonationDeclarationRequest = new DonationDeclarationRequest
+            var testCreateDonationDeclarationRequest = new CreateDeclarationRequest
             {
                 PostCode = "testPostCode",
                 DonationAmount = 2
@@ -131,7 +131,7 @@ namespace JG.FinTechTest.Tests.ControllerTests
         [Test]
         public async Task CreateDonationShouldReturnInternalServerErrorWhenConfigurationIsNotValid()
         {
-            var testCreateDonationDeclarationRequest = new DonationDeclarationRequest
+            var testCreateDonationDeclarationRequest = new CreateDeclarationRequest
             {
                 PostCode = "testPostCode",
                 DonationAmount = 2,
@@ -154,7 +154,7 @@ namespace JG.FinTechTest.Tests.ControllerTests
         [Test]
         public async Task CreateDonationShouldReturnBadRequestWhenAmountIsNotValid()
         {
-            var testCreateDonationDeclarationRequest = new DonationDeclarationRequest
+            var testCreateDonationDeclarationRequest = new CreateDeclarationRequest
             {
                 PostCode = "testPostCode",
                 DonationAmount = 2,
@@ -182,7 +182,7 @@ namespace JG.FinTechTest.Tests.ControllerTests
         [Test]
         public async Task ShouldCreateDonationSuccessfully()
         {
-            var testCreateDonationDeclarationRequest = new DonationDeclarationRequest
+            var testCreateDonationDeclarationRequest = new CreateDeclarationRequest
             {
                 PostCode = "testPostCode",
                 DonationAmount = 800,
@@ -198,7 +198,7 @@ namespace JG.FinTechTest.Tests.ControllerTests
 
             _donationDeclarationServiceMock.Setup(x => x.Insert(It.IsAny<DonationDeclaration>())).Returns("12345");
 
-            var expectedResponse = new DonationDeclarationResponse
+            var expectedResponse = new CreateDeclarationResponse
             {
                 DeclarationId = "12345",
                 GiftAidAmount = 200
@@ -214,7 +214,7 @@ namespace JG.FinTechTest.Tests.ControllerTests
         [Test]
         public async Task GetDeclarationShouldReturnNotFoundCodeWhenGivenIdIsInvalid()
         {
-            var testRequest = new GetDonationDeclarationRequest
+            var testRequest = new GetDeclarationRequest
             {
                 Id = "123456789012345678901234"
             };
@@ -233,7 +233,7 @@ namespace JG.FinTechTest.Tests.ControllerTests
         [Test]
         public async Task GetDeclarationShouldReturnIdLengthValidationError()
         {
-            var testRequest = new GetDonationDeclarationRequest
+            var testRequest = new GetDeclarationRequest
             {
                 Id = "12345"
             };
@@ -246,12 +246,12 @@ namespace JG.FinTechTest.Tests.ControllerTests
         [Test]
         public async Task GetDeclarationShouldReturnDeclarationData()
         {
-            var testRequest = new GetDonationDeclarationRequest
+            var testRequest = new GetDeclarationRequest
             {
                 Id = "123456789012345678901234"
             };
 
-            var expectedResponse = new GetDonationDeclarationResponse
+            var expectedResponse = new GetDeclarationResponse
             {
                 Id = "123456789012345678901234",
                 Name = "Nerijus",

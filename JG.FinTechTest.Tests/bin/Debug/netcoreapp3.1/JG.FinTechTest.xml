@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JG.FinTechTest</name>
+    </assembly>
+    <members>
+        <member name="M:JG.FinTechTest.Controllers.GiftAidController.GetGiftAidAmount(JG.FinTechTest.Domain.Requests.GetGiftAidAmountRequest)">
+            <summary>
+            Get the amount of gift aid reclaimable for donation amount
+            </summary>
+            <response code="200">Returns donationAmount together with calculated giftAid amount.</response>
+            <response code="400">Amount provided is not in the range of valid amount.</response>
+            <response code="500">Server side issue.</response>
+        </member>
+    </members>
+</doc>

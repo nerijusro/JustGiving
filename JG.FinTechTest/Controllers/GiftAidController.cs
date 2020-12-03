@@ -10,6 +10,7 @@ using Microsoft.Extensions.Options;
 using System;
 using System.ComponentModel.DataAnnotations;
 using JG.FinTechTest.Options;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace JG.FinTechTest.Controllers
 {
@@ -28,8 +29,19 @@ namespace JG.FinTechTest.Controllers
             _donationDeclarationService = donationDeclarationService;
         }
 
+        /// <summary>
+        /// Get the amount of gift aid reclaimable for donation amount
+        /// </summary>
+        /// <response code="200">Returns donationAmount together with calculated giftAid amount.</response>
+        /// <response code="400">Amount does not belong to valid amount range.</response>
+        /// <response code="500">Returned when configuration in appsettings.json is not appropriate.</response>
         [HttpGet]
-        public IActionResult GetGiftAidAmount([FromQuery]GetGiftAidAmountRequest request)
+        [SwaggerOperation(Summary = "Get the amount of gift aid reclaimable for donation amount")]
+        [ProducesResponseType(typeof(GiftAidResponse), 200)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(500)]
+        [Produces("application/json")]
+        public IActionResult GetGiftAidAmount([FromQuery]GiftAidRequest request)
         {
             var validationResult = ValidateOperation(request.Amount);
             if(validationResult.StatusCode != 200)
@@ -37,7 +49,7 @@ namespace JG.FinTechTest.Controllers
                 return validationResult;
             }
 
-            var response = new GetGiftAidAmountResponse
+            var response = new GiftAidResponse
             {
                 DonationAmount = Math.Round(request.Amount, 2),
                 GiftAidAmount = _giftAidCalculator.CalculateGiftAid(request.Amount)
@@ -46,9 +58,20 @@ namespace JG.FinTechTest.Controllers
             return Ok(response);
         }
 
+        /// <summary>
+        /// Stores user's information once donation with Gift Aid is made
+        /// </summary>
+        /// <response code="200">Returns the declaration's id together with calculated giftAid amount.</response>
+        /// <response code="400">Returned when one of text field is missing or when amount is not in a valid amount range.</response>
+        /// <response code="500">Returned when configuration in appsettings.json is not appropriate.</response>
         [Route("declarations")]
         [HttpPost]
-        public IActionResult CreateDonationDeclaration(DonationDeclarationRequest request)
+        [SwaggerOperation(Summary = "Stores user's information once donation with Gift Aid is made")]
+        [ProducesResponseType(typeof(CreateDeclarationResponse), 200)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(500)]
+        [Produces("application/json")]
+        public IActionResult CreateDonationDeclaration(CreateDeclarationRequest request)
         {
             if (!ModelState.IsValid)
             {
@@ -68,7 +91,7 @@ namespace JG.FinTechTest.Controllers
                 DonationAmount = request.DonationAmount
             };
 
-            var response = new DonationDeclarationResponse
+            var response = new CreateDeclarationResponse
             {
                 DeclarationId = _donationDeclarationService.Insert(donationDeclaration).ToString(),
                 GiftAidAmount = _giftAidCalculator.CalculateGiftAid(request.DonationAmount)
@@ -77,9 +100,20 @@ namespace JG.FinTechTest.Controllers
             return Ok(response);
         }
 
+        /// <summary>
+        /// Get the record of user's donation declaration
+        /// </summary>
+        /// <response code="200">Returns the information provided in the donation declaration request.</response>
+        /// <response code="400">Returned when provided id's length is not 24.</response>
+        /// <response code="404">Returned when there was no records found by the id given.</response>
         [Route("declarations")]
         [HttpGet]
-        public IActionResult GetDonationDeclaration([FromQuery]GetDonationDeclarationRequest request)
+        [SwaggerOperation(Summary = "Get the record of user's donation declaration")]
+        [ProducesResponseType(typeof(GetDeclarationResponse), 200)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(404)]
+        [Produces("application/json")]
+        public IActionResult GetDonationDeclaration([FromQuery]GetDeclarationRequest request)
         {
             var donationDeclaration = _donationDeclarationService.Get(new ObjectId(request.Id));
 
@@ -88,7 +122,7 @@ namespace JG.FinTechTest.Controllers
                 return NotFound("Records with id provided were not found");
             }
 
-            var response = new GetDonationDeclarationResponse
+            var response = new GetDeclarationResponse
             {
                 Id = donationDeclaration.Id.ToString(),
                 Name = donationDeclaration.Name,

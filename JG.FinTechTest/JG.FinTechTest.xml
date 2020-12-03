@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JG.FinTechTest</name>
+    </assembly>
+    <members>
+        <member name="M:JG.FinTechTest.Controllers.GiftAidController.GetGiftAidAmount(JG.FinTechTest.Domain.Requests.GiftAidRequest)">
+            <summary>
+            Get the amount of gift aid reclaimable for donation amount
+            </summary>
+            <response code="200">Returns donationAmount together with calculated giftAid amount.</response>
+            <response code="400">Amount does not belong to valid amount range.</response>
+            <response code="500">Returned when configuration in appsettings.json is not appropriate.</response>
+        </member>
+        <member name="M:JG.FinTechTest.Controllers.GiftAidController.CreateDonationDeclaration(JG.FinTechTest.Domain.Requests.CreateDeclarationRequest)">
+            <summary>
+            Stores user's information once donation with Gift Aid is made
+            </summary>
+            <response code="200">Returns the declaration's id together with calculated giftAid amount.</response>
+            <response code="400">Returned when one of text field is missing or when amount is not in a valid amount range.</response>
+            <response code="500">Returned when configuration in appsettings.json is not appropriate.</response>
+        </member>
+        <member name="M:JG.FinTechTest.Controllers.GiftAidController.GetDonationDeclaration(JG.FinTechTest.Domain.Requests.GetDeclarationRequest)">
+            <summary>
+            Get the record of user's donation declaration
+            </summary>
+            <response code="200">Returns the information provided in the donation declaration request.</response>
+            <response code="400">Returned when provided id's length is not 24.</response>
+            <response code="404">Returned when there was no records found by the id given.</response>
+        </member>
+    </members>
+</doc>

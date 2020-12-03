@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "BYS+sXqwJ8xMgoEwa3BMX9hiwd6vQkdEZYEkc4WsD3cjSmilSHzI9sn0k9XczFP3LzR5eRaBwWOU9Xoyjh3/Mg==",
+  "dgSpecHash": "5qb2eZdoBKgSsI3e1VVx0Ua3na0DcCO6zKjlfsz8nCIwdkahBPLNtkuDo8nR4FZjQsRS7248so9c0YqA5cjqkA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Nerijus.Rozga\\Desktop\\New folder\\JustGiving\\JG.FinTechTest.Tests\\JG.FinTechTest.Tests.csproj",
   "expectedPackageFiles": [
@@ -68,6 +68,7 @@
     "C:\\Users\\Nerijus.Rozga\\.nuget\\packages\\nunit3testadapter\\3.10.0\\nunit3testadapter.3.10.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\Nerijus.Rozga\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\Nerijus.Rozga\\.nuget\\packages\\swashbuckle.aspnetcore.annotations\\5.6.3\\swashbuckle.aspnetcore.annotations.5.6.3.nupkg.sha512",
     "C:\\Users\\Nerijus.Rozga\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
     "C:\\Users\\Nerijus.Rozga\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
     "C:\\Users\\Nerijus.Rozga\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512",

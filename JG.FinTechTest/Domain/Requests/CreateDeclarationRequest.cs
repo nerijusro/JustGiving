@@ -1,9 +1,8 @@
-﻿using Newtonsoft.Json;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace JG.FinTechTest.Domain.Requests
 {
-    public class DonationDeclarationRequest
+    public class CreateDeclarationRequest
     {
         [Required]
         public string Name { get; set; }

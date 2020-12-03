@@ -1,4 +1,3 @@
-C:\Users\Nerijus.Rozga\Desktop\New folder\JustGiving\JG.FinTechTest\obj\Debug\netcoreapp3.1\JG.FinTechTest.csprojAssemblyReference.cache
 C:\Users\Nerijus.Rozga\Desktop\New folder\JustGiving\JG.FinTechTest\obj\Debug\netcoreapp3.1\JG.FinTechTest.AssemblyInfoInputs.cache
 C:\Users\Nerijus.Rozga\Desktop\New folder\JustGiving\JG.FinTechTest\obj\Debug\netcoreapp3.1\JG.FinTechTest.AssemblyInfo.cs
 C:\Users\Nerijus.Rozga\Desktop\New folder\JustGiving\JG.FinTechTest\obj\Debug\netcoreapp3.1\JG.FinTechTest.csproj.CoreCompileInputs.cache
@@ -31,3 +30,6 @@ C:\Users\Nerijus.Rozga\Desktop\New folder\JustGiving\JG.FinTechTest\bin\Debug\ne
 C:\Users\Nerijus.Rozga\Desktop\New folder\JustGiving\JG.FinTechTest\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\Nerijus.Rozga\Desktop\New folder\JustGiving\JG.FinTechTest\obj\Debug\netcoreapp3.1\JG.FinTechTest.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Nerijus.Rozga\Desktop\New folder\JustGiving\JG.FinTechTest\bin\Debug\netcoreapp3.1\LiteDB.dll
+C:\Users\Nerijus.Rozga\Desktop\New folder\JustGiving\JG.FinTechTest\bin\Debug\netcoreapp3.1\JG.FinTechTest.xml
+C:\Users\Nerijus.Rozga\Desktop\New folder\JustGiving\JG.FinTechTest\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Annotations.dll
+C:\Users\Nerijus.Rozga\Desktop\New folder\JustGiving\JG.FinTechTest\obj\Debug\netcoreapp3.1\JG.FinTechTest.csprojAssemblyReference.cache
